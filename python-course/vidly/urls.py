@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api.models import MovieResource
+from . import views
+
+movie_resource = MovieResource()  # Instance of this class
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.home),
     # passing the moduel that contains the configuration of movies -> url
-    path('movies/', include('movies.urls'))
+    path('admin/', admin.site.urls),
+    path('movies/', include('movies.urls')),
+    # Returns the urls for this resource based on the resource name (movies)
+    path('api/', include(movie_resource.urls))
 ]
