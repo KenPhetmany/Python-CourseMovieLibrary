@@ -1,7 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
+# Classes that represent the domain of the app. E.g. classes of
+# movies will have title, genre, release year
 
 
 class Genre(models.Model):
