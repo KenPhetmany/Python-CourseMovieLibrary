@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # passing the moduel that contains the configuration of movies -> url
     path('movies/', include('movies.urls'))
 ]
